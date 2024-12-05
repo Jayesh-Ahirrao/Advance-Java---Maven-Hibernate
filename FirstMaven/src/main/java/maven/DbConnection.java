@@ -13,7 +13,6 @@ public class DbConnection {
 			System.out.println("Connection Established");
 			con.close();
 			System.out.println("Connection closed");
-
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
