@@ -18,7 +18,7 @@ public class Emp {
 
 	@Id
 	@Column(name = "EMPNO")
-	private int id;
+	private Integer id;
 
 	@Column(name = "ENAME")
 	private String name;
@@ -27,39 +27,25 @@ public class Emp {
 	private String job;
 
 	@Column(name = "MGR")
-	private int managerId;
+	private Integer managerId;
 
 	@Column(name = "HIREDATE")
 	private Date hireDate;
 
 	@Column(name = "SAL")
-	private float salary;
+	private Float salary;
 
 	@Column(name = "COMM")
-	private float commission;
+	private Float commission;
 
 	@Column(name = "DEPTNO")
-	private int deptNumber;
-	
-	
-	public Emp(int id, String name, String job, int managerId, Date hireDate, float salary, float commission,
-			int deptNumber) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.job = job;
-		this.managerId = managerId;
-		this.hireDate = hireDate;
-		this.salary = salary;
-		this.commission = commission;
-		this.deptNumber = deptNumber;
-	}
+	private Integer deptNumber;
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -79,11 +65,11 @@ public class Emp {
 		this.job = job;
 	}
 
-	public int getManagerId() {
+	public Integer getManagerId() {
 		return managerId;
 	}
 
-	public void setManagerId(int managerId) {
+	public void setManagerId(Integer managerId) {
 		this.managerId = managerId;
 	}
 
@@ -95,27 +81,50 @@ public class Emp {
 		this.hireDate = hireDate;
 	}
 
-	public float getSalary() {
+	public Float getSalary() {
 		return salary;
 	}
 
-	public void setSalary(float salary) {
+	public void setSalary(Float salary) {
 		this.salary = salary;
 	}
 
-	public float getCommission() {
+	public Float getCommission() {
 		return commission;
 	}
 
-	public void setCommission(float commission) {
+	public void setCommission(Float commission) {
 		this.commission = commission;
 	}
 
-	public int getDeptNumber() {
+	public Integer getDeptNumber() {
 		return deptNumber;
 	}
 
-	public void setDeptNumber(int deptNumber) {
+	public void setDeptNumber(Integer deptNumber) {
+		this.deptNumber = deptNumber;
+	}
+
+	public Emp() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "Emp [id=" + id + ", name=" + name + ", job=" + job + ", managerId=" + managerId + ", hireDate="
+				+ hireDate + ", salary=" + salary + ", commission=" + commission + ", deptNumber=" + deptNumber + "]";
+	}
+
+	public Emp(int id, String name, String job, int managerId, Date hireDate, float salary, float commission,
+			int deptNumber) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.job = job;
+		this.managerId = managerId;
+		this.hireDate = hireDate;
+		this.salary = salary;
+		this.commission = commission;
 		this.deptNumber = deptNumber;
 	}
 }
