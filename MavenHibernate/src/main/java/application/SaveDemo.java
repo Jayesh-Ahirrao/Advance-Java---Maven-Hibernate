@@ -24,6 +24,7 @@ public class SaveDemo {
 
 		Session session = sf.openSession();
 
+		// Transient object
 		Emp e = new Emp(7399, "Milkha", "CLERK", 7902, null, 9999.99f, 1.6f, 20);
 
 		Transaction tr = session.beginTransaction();
