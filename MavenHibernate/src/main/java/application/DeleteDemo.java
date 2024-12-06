@@ -1,6 +1,5 @@
 package application;
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,14 +18,26 @@ public class DeleteDemo {
 		Metadata metadat = new MetadataSources(registry).getMetadataBuilder().build();
 		SessionFactory sf = metadat.getSessionFactoryBuilder().build();
 		Session s = sf.openSession();
-		
+
 		Transaction tr = s.beginTransaction();
-		Emp e = s.get(Emp.class, 7499);
-		s.delete(e);
-		
+
+		// 1. using methods
+		Emp e = s.get(Emp.class, 7654);
+		Emp e2 = s.get(Emp.class, 7654);
+//		s.remove(e);	//JPA compliant method
+		s.delete(e); // Hibernate specific method
 		tr.commit();
-		
-		
+
+		Transaction tr2 = s.beginTransaction();
+		System.out.println("Before persist\n" + e);
+		s.persist(e); // query
+		System.out.println("After persist\n" + e);
+
+//		HQL query
+//		String hql = "DELETE FROM Emp WHERE id = :id";
+//		int deleteCount = s.createQuery(hql).setParameter("id", 7566).executeUpdate();
+//		System.out.println("Deleted count : " + deleteCount);
+		tr2.commit();
 	}
 
 }

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "emp")
-public class Emp {
+public class Emp {         
 	/*
 	 * EMPNO int ENAME varchar(10) JOB varchar(9) MGR int HIREDATE date SAL
 	 * decimal(7,2) COMM decimal(7,2) DEPTNO int
